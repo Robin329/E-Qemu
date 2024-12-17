@@ -22,9 +22,13 @@ if [[ " ${SUPPORTED_ARCH[@]} " =~ " ${ARCH} " ]]; then
       if [ ! -d "qemu" ]; then
         git clone https://mirrors.tuna.tsinghua.edu.cn/git/qemu.git --depth=1
       fi
+      if [ ! -d "busybox" ]; then
+        git clone https://github.com/mirror/busybox.git --depth=1
+      fi
       cd $TDIR
       ./scripts/tools/build_kernel.sh
       ./scripts/tools/build_qemu.sh
+      ./scripts/tools/build_rootfs.sh
       ;;
     arm32)
       echo "You selected ARM 32-bit architecture."

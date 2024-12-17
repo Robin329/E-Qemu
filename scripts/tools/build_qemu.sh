@@ -6,10 +6,7 @@ cd $QEMU_SRC
 
 mkdir build
 cd build
-meson setup \
-  --prefix=/usr/local \
-  --enable-kvm \
-  --target-list=aarch64-softmmu,x86_64-softmmu \
-  ..
+../configure \
+  --target-list=aarch64-softmmu,x86_64-softmmu,aarch64-linux-user,riscv64-softmmu,arm-softmmu
 
-ninja -C build
+ninja

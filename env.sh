@@ -42,7 +42,7 @@ case $toolchain in
         export AARCH64_CROSS_COMPILE=aarch64-none-elf-
     ;;
 	*)
-		echo "$toolchain error. Should be 'arm32', 'r52', 'optee' and 'gnu64'."
+		echo "$toolchain error. Should be 'arm32', 'arm64', 'x86_64' and 'risc64'."
         exit -1
 	;;
 esac
